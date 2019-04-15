@@ -195,8 +195,10 @@ for (var i = 1; i <= 3; i++) {
 				output += "</div>";
 				output += "</div>";				
 			}
+
 			else {
-				output += "<div id=\""+ i +"_"+ ImagesSign[j-1].split(".")[0].split("_")[1] +"\" class=\"container\" >";
+						console.log(ImagesSign[j-1]);
+				output += "<div id=\""+ i +"_"+ ImagesSign[j-1].split(".")[1].split("_")[1] +"\" class=\"container\" >";
 				output += "<div class=\"card\">";
 				output += "<div class=\"back\"/>";
 				output += "<img class=\"\" src = '" + ImagesSign[j-1] + "'/>";
@@ -223,7 +225,8 @@ for (var i = 1; i <= 3; i++) {
 				output += "</div>";				
 			}
 			else {
-				output += "<div id=\""+ i +"_"+ ImagesPicture[j-1].split(".")[0].split("_")[1] +"\" class=\"container\">";
+						console.log(ImagesSign[j-1]);
+				output += "<div id=\""+ i +"_"+ ImagesPicture[j-1].split(".")[1].split("_")[1] +"\" class=\"container\">";
 				output += "<div class=\"card\">";
 				output += "<div class=\"back\"/>";
 				output += "<img class=\"\" src = '" + ImagesPicture[j-1] + "'/>";
@@ -250,7 +253,8 @@ for (var i = 1; i <= 3; i++) {
 				output += "</div>";				
 			}
 			else {		
-				output += "<div id=\""+ i +"_"+ ImagesText[j-1].split(".")[0].split("_")[1] +"\" class=\"container\">";
+						console.log(ImagesSign[j-1]);
+				output += "<div id=\""+ i +"_"+ ImagesText[j-1].split(".")[1].split("_")[1] +"\" class=\"container\">";
 				output += "<div class=\"card\">";
 				output += "<div class=\"back\"/>";
 				output += "<img class=\"\" src = '" + ImagesText[j-1] + "'/>";
