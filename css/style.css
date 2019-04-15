@@ -1,0 +1,571 @@
+
+.card-ontop {
+	z-index: 1000;
+}
+
+#result {
+	margin-left: 6em;
+	margin-top: 6em;
+}
+
+body {
+background-color: #ddffaa;
+background-image: url("E:/Projects/ohneworte/game/background.svg");
+}
+
+*:focus{
+	outline:none !important;
+}
+#game {
+width: 100%;
+height: 100%;
+margin: 0;
+padding-left: 3em;
+padding-top: 3em;
+}
+.wrapper {
+  width: 80%;
+  padding: 4%;
+  margin: 20px auto;
+  background: #fff;
+}
+
+.wrapper.cards {
+  background: 0;
+  width: 88%;
+  padding: 20px 0 0 0;
+}
+
+.container {
+background: transparent !important;
+
+border-radius: 10%;  
+display: flex;
+  position: relative;
+  float: left;
+  width: 22%;
+  height: 200px;
+  margin: 5px;
+  background: #fff;
+  
+  /* Set the depth of the elements */
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  -o-perspective: 800px;
+  perspective: 800px;
+}
+
+.container-drop {
+background: transparent !important;
+
+border-radius: 10%;  
+display: flex;
+  position: relative;
+  float: left;
+  width: 22%;
+  height: 200px;
+  margin: 5px;
+  background: #fff;
+  
+  /* Set the depth of the elements */
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  -o-perspective: 800px;
+  perspective: 800px;
+}
+
+.container:first-child {
+  margin-left: 0;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+  margin: 0 auto;
+border-radius: 10%;  
+  /* Set the transition effects */
+  -webkit-transition: -webkit-transform 0.4s;
+  -moz-transition: -moz-transform 0.4s;
+  -o-transition: -o-transform 0.4s;
+  transition: transform 0.4s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.card.flipped {
+  -webkit-transform: rotateY( 180deg );
+  -moz-transform: rotateY( 180deg );
+  -o-transform: rotateY( 180deg );
+  transform: rotateY( 180deg );
+}
+
+.card .front,
+.card .back {
+border-radius: 10%;
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 260px;
+  color: white;
+  text-align: center;
+  font-size: 4em;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  
+  box-shadow: 3px 5px 20px 2px rgba(0, 0, 0, 0.25);
+}
+.card .front,
+.card .back {
+  font-size: 16px;
+  text-align: left;
+  line-height: 25px;
+}
+
+.card .front {
+	background-image: url("/game/charlie-brown.svg"); 	
+}
+
+.card .blue {
+ background-color: blue;
+}
+
+.card .red {
+ background-color: red;
+}
+
+.card .yellow {
+ background-color: yellow;
+}
+
+.card .back {
+  -webkit-transform: rotateY( 180deg );
+  -moz-transform: rotateY( 180deg );
+  -o-transform: rotateY( 180deg );
+  transform: rotateY( 180deg ); 
+  background-color: #ffffff;
+  }
+
+.card img {
+border-radius: 10%;
+	width: 100%;
+	height: 100%;
+}
+
+.coin-flip{
+  -webkit-animation: flip 3s ease-out forwards;
+  -moz-animation: flip 3s ease-out forwards;
+    -o-animation: flip 3s ease-out forwards;
+       animation: flip 3s ease-out forwards;
+}
+
+@-webkit-keyframes flip {
+  from { -webkit-transform: rotateY(0); -moz-transform: rotateY(0); transform: rotateY(0); }
+  to { -webkit-transform: rotateY(1800deg); -moz-transform: rotateY(1800deg); transform: rotateY(1800deg); }
+}
+
+.bounce {
+  animation-name: bounce;
+  -webkit-animation-name: bounce;
+  animation-duration: 1.6s;
+  -webkit-animation-duration: 1.6s;
+  animation-timing-function: ease;
+  -webkit-animation-timing-function: ease;
+  transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+  -webkit-transform-origin: 50% 100%;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0%) scaleY(0.6);
+  }
+  60% {
+    transform: translateY(-100%) scaleY(1.1);
+  }
+  70% {
+    transform: translateY(0%) scaleY(0.95) scaleX(1.05);
+  }
+  80% {
+    transform: translateY(0%) scaleY(1.05) scaleX(1);
+  }
+  90% {
+    transform: translateY(0%) scaleY(0.95) scaleX(1);
+  }
+  100% {
+    transform: translateY(0%) scaleY(1) scaleX(1);
+  }
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: translateY(0%) scaleY(0.6);
+  }
+  60% {
+    -webkit-transform: translateY(-100%) scaleY(1.1);
+  }
+  70% {
+    -webkit-transform: translateY(0%) scaleY(0.95) scaleX(1.05);
+  }
+  80% {
+    -webkit-transform: translateY(0%) scaleY(1.05) scaleX(1);
+  }
+  90% {
+    -webkit-transform: translateY(0%) scaleY(0.95) scaleX(1);
+  }
+  100% {
+    -webkit-transform: translateY(0%) scaleY(1) scaleX(1);
+  }
+}
+.menu {
+ 	position:absolute;
+    /* color with alpha transparency */
+    /*background-color: rgba(0, 0, 0, 0.7);*/
+
+    background-color: #ddffaa;
+
+    /* stretch to screen edges */
+    top: 0;
+	left: 0;
+    bottom: 0;
+    right: 0;    
+    height: 110%;
+    width: 110%;
+}
+.overlay {
+ 	position:absolute;
+	display:none; 
+
+    /* color with alpha transparency */
+    background-color: rgba(0, 0, 0, 0.7);
+
+    /* stretch to screen edges */
+    top: 0;
+	left: 0;
+    bottom: 0;
+    right: 0;
+    height: 110%;
+    width: 110%;    
+}
+.popup {
+
+    display: none;
+    background: rgba(255,255,255,0);
+
+
+   width: Xu;
+   height: Yu;
+   position: absolute;
+   top: 20%;
+   left: 20%;
+   margin-left: -(X/2)u;
+   margin-top: -(Y/2)u;
+}
+
+.slide-in {
+    animation: slide-in 10s forwards;
+    -webkit-animation: slide-in 10s forwards;
+}
+    .scale {
+        transition: all .2s ease-in-out;
+        transform: scale(1.1);
+    }
+	
+         @-webkit-keyframes wobble { 
+            0% { -webkit-transform: translateY(0%); } 
+            15% { -webkit-transform: translateY(-25%) rotate(-5deg); } 
+            30% { -webkit-transform: translateY(20%) rotate(3deg); } 
+            45% { -webkit-transform: translateY(-15%) rotate(-3deg); } 
+            60% { -webkit-transform: translateY(10%) rotate(2deg); } 
+            75% { -webkit-transform: translateY(-5%) rotate(-1deg); }
+            100% { -webkit-transform: translateY(0%); } 
+         }
+         
+         @keyframes wobble { 
+            0% { -webkit-transform: translateY(0%); } 
+            15% { -webkit-transform: translateY(-25%) rotate(0deg); } 
+            30% { -webkit-transform: translateY(20%) rotate(0deg); } 
+            45% { -webkit-transform: translateY(-15%) rotate(0deg); } 
+            60% { -webkit-transform: translateY(10%) rotate(0deg); } 
+            75% { -webkit-transform: translateY(-5%) rotate(0deg); }
+            100% { -webkit-transform: translateY(0%); } 
+         }
+         
+         .wobble { 
+		             -webkit-animation-duration: 0.5s;
+            animation-duration: 0.5s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+            -webkit-animation-name: wobble; 
+            animation-name: wobble;
+			z-index: 5;
+         }	
+		 
+.flipped {
+
+    -webkit-transform: rotateY( 180deg );
+    -moz-transform: rotateY( 180deg );
+    -o-transform: rotateY( 180deg );
+    transform: rotateY( 180deg );
+}	
+
+/* Game Menu */
+
+#exit {
+  height:30px;
+  width:30px;
+  background:#598912;
+  border: 1px solid black;
+  border-radius:50px;
+  position:Absolute;
+  top:-30px;
+  z-index:50;
+  right:-15px;
+  -webkit-transition:0.5s;
+  transition:0.5s;
+  cursor:pointer;
+  
+}
+#exit:after {
+  content:"";
+  display:block;
+  height:15px;
+  width:15px;
+  background:transparent;
+  border-radius:50px;
+  position:absolute;
+  top:5px;
+  left:5px;
+  
+  border:3px solid #aaec47;
+  border-top-color:transparent;
+  
+}
+
+#exit:before {
+  content:"";
+  display:block;
+  height:10px;
+  width:3px;
+  background:#aaec47;
+  z-index:70;
+  position:Absolute;
+  right:13px;
+  top:6px;
+  
+}
+#circle {
+  height:40px;
+  width:40px;
+  background:transparent;
+  border:1px solid white;
+  border-radius:50px;
+  position:absolute;
+  top:-35px;
+  z-index:40;
+  right:-20px;
+  
+}
+
+#exit:hover {
+  background:#7A0000;
+  
+}
+
+
+
+#menu-block {
+  width:0px;
+  height:0px;
+  
+  border-left: 300px solid transparent;
+  border-right:300px solid transparent;
+  border-top: 300px solid transparent;
+  border-radius: px;
+  position:relative;
+  margin:auto;
+  top:20%;
+  left:2px;
+  
+
+  
+  
+  
+  
+}
+
+#menu-basics {
+  border-radius: 10px;
+  position:relative;
+  bottom:330px;
+  right:300px;
+  height:auto;
+  width:600px;
+  background:#598912;
+  text-align:center;
+  font-size:30px;
+ background-size: 1px 300%;
+ -webkit-transition:0.5s;
+  transition:0.5s;
+  color:#aaec47;
+  font-family:chewy;
+  
+  cursor:pointer;
+  
+  font-size: 3em;
+  
+}
+
+#menu-basics:hover {
+  background:#7A0000;
+  color:white;
+-webkit-transform:rotate(-1deg);
+  transform:rotate(-2deg);
+  
+  
+}
+
+#menu-first:hover {
+  background:#534e4e;
+  color:#8c8c8c;
+   
+  -webkit-transform:rotate(-2deg);
+  transform:rotate(-2deg);
+  
+  
+}
+
+#menu-credits:hover {
+  background:#7A0000;
+  color:white;
+  -webkit-transform:rotate(-2deg);
+  transform:rotate(-2deg);
+  
+}
+
+#menu-donate:hover {
+  background:#7A0000;
+  color:white;
+  -webkit-transform:rotate(-2deg);
+  transform:rotate(-2deg);
+  
+}
+
+#left {
+  height:100px;
+    width:600px;
+  background:#aaec47;
+  position:absolute;
+  z-index:6;
+  -webkit-transform:rotate(45deg);
+  transform:rotate(45deg);
+  top:-175px;
+  right:-104px;
+  border-top:1px solid white;
+  
+}
+#right {
+  height:100px;
+  width:600px;
+  background:#aaec47;
+  position:absolute;
+  top:-229px;
+  -webkit-transform:rotate(-45deg);
+  transform:rotate(-45deg);
+  z-index:7;
+  left:-56px;
+  border-top:1px solid white;
+  
+  
+}
+
+
+
+#menu-basics p {
+  position:relative;
+  top:2px;
+  right:4px;
+  
+  
+}
+
+#menu-first {
+    border-radius: 10px;    
+  height:auto;
+  width:500px;
+  background:#534e4e;
+  position:relative;
+  bottom:345px;
+  right:240px;
+  text-align:center;
+  font-size:30px;
+  font-family:chewy;
+  color:#8c8c8c;
+   -webkit-transition:0.5s;
+  transition:0.5s;
+  cursor:pointer;
+  
+  font-size: 3em;   
+  
+}
+#menu-first p {
+  position:relative;
+  top:0px;
+  right:9px;
+  
+}
+
+#menu-donate {
+    border-radius: 10px;  
+  height:auto;
+  width:400px;
+  background:#598912;
+  position:relative;
+  bottom:360px;
+  right:200px;
+  font-size:30px;
+  text-align:center;
+  font-family:chewy;
+  color:#aaec47;
+   -webkit-transition:0.5s;
+  transition:0.5s;
+  cursor:pointer;
+  font-size: 3em;  
+}
+
+#menu-donate p {
+  position:relative;
+  top:0px;
+  right:4px;
+  
+}
+
+#menu-credits {
+    border-radius: 10px;
+  height:auto;
+  width:300px;
+  position:relative;
+  background:#598912;
+  bottom:375px;
+  font-size:30px;
+  right:150px;
+  text-align:center;
+  font-family:chewy;
+  color:#aaec47;
+   -webkit-transition:0.5s;
+  transition:0.5s;
+  cursor:pointer;
+  font-size: 3em;  
+}
+
+#menu-credits p {
+  position:relative;
+  top:0px;
+  
+}
